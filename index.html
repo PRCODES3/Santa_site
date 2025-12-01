@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat with Santa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat with Santa 🎅</title>
+
+  <!-- Google Font (optional but pretty) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <h1>Chat with Santa</h1>
-    <p>This is a placeholder version. The full UI will load when uploaded.</p>
-    <script src="app.js"></script>
+  <div class="snow-overlay"></div>
+
+  <header class="site-header">
+    <div class="logo-wrap">
+      <div class="logo-circle">🎅</div>
+      <div>
+        <h1>Chat with Santa</h1>
+        <p class="tagline">Ask Santa anything, with real-time festive replies.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h2>Ho Ho Ho! Santa is online…</h2>
+        <p>
+          Talk or type your wishes and questions. Santa will answer with jolly,
+          family-friendly messages — perfect for kids, parents, and holiday landing pages.
+        </p>
+
+        <div class="controls-row">
+          <label class="select-label">
+            Santa's Voice
+            <select id="voiceProfile">
+              <option value="santa">Santa 🎅</option>
+              <option value="mrs_claus">Mrs. Claus 🤶</option>
+              <option value="elf">North Pole Elf 🧝‍♂️</option>
+            </select>
+          </label>
+
+          <label class="toggle">
+            <input type="checkbox" id="voiceToggle" checked />
+            <span>Speak replies out loud</span>
+          </label>
+        </div>
+
+        <button id="startVoiceBtn" class="primary-btn">
+          <span class="btn-icon">🎙️</span>
+          Hold to talk
+        </button>
+        <p class="hint">
+          Hold the mic button and speak. Release to stop listening.
+          (On some browsers, mic permissions must be allowed.)
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="santa-card">
+          <img
+            src="assets/img/santa-hero.png"
+            alt="Santa chatting on a laptop at the North Pole"
+            class="santa-img"
+          />
+          <div class="bubble bubble-santa">Ho ho ho! Ready when you are!</div>
+          <div class="bubble bubble-user">Santa, am I on the nice list?</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAT -->
+    <section class="chat-section">
+      <div id="chatWindow" class="chat-window">
+        <!-- Messages injected via JS -->
+      </div>
+
+      <form id="chatForm" class="chat-input-row">
+        <input
+          id="userInput"
+          type="text"
+          autocomplete="off"
+          placeholder="Type your message to Santa..."
+        />
+        <button type="submit" class="primary-btn">Send</button>
+      </form>
+
+      <p class="disclaimer">
+        This is an AI-style Santa for fun and entertainment only.
+        Please avoid sharing private or sensitive information.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Chat with Santa · Made with ❄️ at the North Pole.</span>
+  </footer>
+
+  <script src="assets/js/chat.js" defer></script>
 </body>
 </html>
